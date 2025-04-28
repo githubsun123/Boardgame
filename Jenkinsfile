@@ -1,28 +1,26 @@
 pipeline {
-    agent { label 'agent-1'}
-     
+    agent any  < any vm's
+    
     tools {
-        maven 'maven3.9'
+        maven 'maven3.6'  #added as plugin so should define it, same name as in tools
         jdk 'jdk17'
-    }
+    }    
 
     stages {
-        
+   
         stage('Compile') {
             steps {
-             sh 'mvn compile'
+                sh 'mvn compile'
             }
         }
-        
         stage('Test') {
             steps {
-              sh 'mvn test' 
+                sh 'mvn test'
             }
         }
-        
-        stage('Build') {
+        stage('Package') {
             steps {
-              sh "mvn package"
+                sh 'mvn package'
             }
         }
     }
