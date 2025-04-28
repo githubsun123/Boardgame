@@ -1,8 +1,8 @@
 pipeline {
-    agent any  < any vm's
+    agent any 
     
     tools {
-        maven 'maven3.6'  #added as plugin so should define it, same name as in tools
+        maven 'maven3.6'   
         jdk 'jdk17'
     }    
 
